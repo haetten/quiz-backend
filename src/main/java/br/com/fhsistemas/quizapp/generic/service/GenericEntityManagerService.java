@@ -12,7 +12,8 @@ import org.springframework.cache.annotation.Cacheable;
 
 import br.com.fhsistemas.quizapp.generic.model.Parameter;
 import br.com.fhsistemas.quizapp.generic.model.PersistentEntity;
-import br.com.fhsistemas.quizapp.generic.model.QueryFilter;
+import br.com.fhsistemas.quizapp.entity.book.Book;
+import br.com.fhsistemas.quizapp.generic.model.GenericFilter;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.Query;
@@ -21,7 +22,7 @@ import jakarta.transaction.Transactional;
 public abstract class GenericEntityManagerService<
 	T extends PersistentEntity<I>
   , I extends Serializable
-  , Q extends QueryFilter
+  , Q extends GenericFilter
 >
 extends GenericService<T, I>{
 
@@ -32,11 +33,18 @@ extends GenericService<T, I>{
 		super(className);
 	}
 
-	protected abstract List<Parameter> buildParameters(Q filter) ;
+	protected List<Parameter> buildParameters(Q filter) {
+		return new ArrayList<>();
+	}
 
-	protected abstract List<T> postProcessing(List<T> results) ;
+	protected List<T> postProcessing(List<T> results) {
+		return results;
+	}
 
-	protected abstract String getJoin(Q consulta) ;
+	protected String getJoin(Q consulta) {
+		return "";
+	}
+	
 
     
     private String getStringHqlParameters(List<Parameter> parameters) {
