@@ -97,7 +97,7 @@ public class TestEntity extends PersistentEntity<Long> {
 }
 ```
 
-### 2. Crie o Serviço Genérico, usando Repository ou EntityManager:
+### 2. Create the Generic Service, using Repository or EntityManager:
 The service contains the business logic and interacts with the repository.
 Your service must extend GenericService\<T, I\>, where T is the entity and I is the identifier type.
 
