@@ -1,3 +1,8 @@
+[🇺🇸 Read this page in english](./README.md)
+
+[🇧🇷 Leia esta página em português](./README-pt.md)
+
+
 # About
 
 Example API using Spring and Redis, with the use of generics to simplify the creation of Java APIs for basic CRUD (Create, Read, Update, Delete) operations, implemented through a simple backend system for questions.
@@ -79,7 +84,7 @@ The API uses the concept of generics and abstract classes to provide generic CRU
 
 ### 1. Create the Persistent Entity:
 The entity defines the structure of the table in the database.
-Your entity must extend PersistentEntity<I>, where I is the type of the identifier (e.g., Long).
+Your entity must extend PersistentEntity\<I\>, where I is the type of the identifier (e.g., Long).
 
 ##### TestEntity.java
 ```java
@@ -94,7 +99,7 @@ public class TestEntity extends PersistentEntity<Long> {
 
 ### 2. Crie o Serviço Genérico, usando Repository ou EntityManager:
 The service contains the business logic and interacts with the repository.
-Your service must extend GenericService<T, I>, where T is the entity and I is the identifier type.
+Your service must extend GenericService\<T, I\>, where T is the entity and I is the identifier type.
 
 GenericService has two abstract subclasses with different implementations for database connection:
 - GenericEntityManagerService, which uses EntityManager.
@@ -145,7 +150,7 @@ public class TestService extends GenericRepositoryService<TestEntity, Long, Test
 
 ### 3. Create the Specific Controller:
 The controller exposes RESTful endpoints.
-Your controller must extend GenericController<T, I, S>, where T is the entity, I is the identifier type, and S is the service.
+Your controller must extend GenericController\<T, I, S\>, where T is the entity, I is the identifier type, and S is the service.
 
 ##### TestController.java
 ```java

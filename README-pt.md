@@ -1,3 +1,8 @@
+[🇺🇸 Read this page in english](./README.md)
+
+[🇧🇷 Leia esta página em português](./README-pt.md)
+
+
 # Sobre
 
 Exemplo de API utilizando Spring e Redis, com uso de genéricos para facilitar a criação de APIs em Java para operações básicas de CRUD (Create, Read, Update, Delete), implementado por meio de um backend de sistema simples de questões.
@@ -79,7 +84,7 @@ A API usa o conceito de genéricos e classes abstratas para fornecer operações
 
 ### 1. Crie a Entidade Persistente:
 A entidade define a estrutura da tabela no banco de dados.
-Sua entidade deve estender PersistentEntity<I>, onde I é o tipo do identificador (por exemplo, Long).
+Sua entidade deve estender PersistentEntity\<I\>, onde I é o tipo do identificador (por exemplo, Long).
 
 ##### TestEntity.java
 ```java
@@ -94,7 +99,7 @@ public class TestEntity extends PersistentEntity<Long> {
 
 ### 2. Crie o Serviço Genérico, usando Repository ou EntityManager:
 O serviço contém a lógica de negócios e interage com o repositório.
-Seu serviço deve estender GenericService<T, I>, onde T é a entidade e I é o tipo do identificador.
+Seu serviço deve estender GenericService\<T, I\>, onde T é a entidade e I é o tipo do identificador.
 
 GenericService possui 2 subclasses abstratas, com diferentes implementações para conexão ao banco:
 - GenericEntityManagerService, que usa EntityManager;
@@ -145,7 +150,7 @@ public class TestService extends GenericRepositoryService<TestEntity, Long, Test
 
 ### 3. Crie o Controlador Específico:
 O controlador permite expor endpoints RESTful.
-Seu controlador deve estender GenericController<T, I, S>, onde T é a entidade, I é o tipo do identificador, e S é o serviço.
+Seu controlador deve estender GenericController\<T, I, S\>, onde T é a entidade, I é o tipo do identificador, e S é o serviço.
 
 ##### TestController.java
 ```java
