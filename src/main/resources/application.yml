@@ -1,0 +1,52 @@
+project.version: "@project.version@"
+logging:
+  level:
+    root: debug
+server:
+  port: ${SERVER_PORT:8082}
+  servlet:
+    context-path: /api
+spring:
+  cache:
+    type: redis
+  redis:
+    host: ${SPRING_REDIS_HOST:localhost}
+    port: ${SPRING_REDIS_PORT:6379}
+  sql.init.platform: postgres
+  liquibase:
+     change-log: db/changelog/db.changelog-master.xml
+     enabled: true
+  mvc.pathmatch.matching-strategy: ant-path-matcher
+  main.allow-circular-references: true
+  jpa:
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/quiz}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:postgres} 
+  mail:
+    host: ${SPRING_MAIL_HOST:smtp.gmail.com}
+    port: ${SPRING_MAIL_PORT:587}
+    username: ${SPRING_MAIL_USERNAME:mail_user}
+    password: ${SPRING_MAIL_PASSWORD:mail_pass}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 50MB
+      max-request-size: 50MB
+springdoc:
+  show-login-endpoint: true
+security:
+  jwt:
+    token:
+      secret-key: ${SPRING_JWT_TOKEN_SECRETKEY:MIICWwIBAAKBgQCcSL3BugeM/B4hEOyKkVHMzrkzyxWjO1K/DDRne7OIFMRM06hYK0CAZ581L+XCg1h4bRslF2ou3AIrqVKQVjmw57dU+zZY3YHnNry7WOQ3CYa9UJA0ZPELLMpd9+KVBF2VXuVBAQAfmmg1RhathMcvq1StX3GP9P3QN1BjUa09L9QIDAQABAoGAahUCIO6qU2uK8/zt4rzzXmbv1ZVDUbJh32ZkZ93SpksaV9/PxFFPj3TQ36Rse9T2B4BfzZSQMdCK9KIRdgHhU/zKhPqBQEGlRbSMmwxJfzmLg4F/Iv1pBp3FUslCXlSSWvxzUsrCBzg3mWcG+dVy2mlvmcSGQOnKSeK05qyrA/0CQQDtupr5XbIXBEsWOOxACJYIRuESh+NhJnnAoR8t9rmMbicKVt7n3/Y/zYdOXRlBrZdgBNHzgPxASqLgQm/DAcfjAkEAqEuu3ao0zZsy4pv4P/s4NHTrN1MS19YfmbpBh8lvS/zycgGtXTcpCokStHscfjAQHSeQQwR6DDB7ENkwFCp0RwJAKA6wfGJYVt6HVHhE/skzlrNyy2+QVddo3peHrHQNcedBttFKgCHR2ZBlQ0QWtGVuw2QsiG5sktzAsy8eq+pJ5wJAIv758eY+7LJlNnIwgT2ARog5kVuZA4DnOVRd5BqjJi4HTGXE4ylhQ2uVlCo1lpfwAeAEQ6tepcI/FRXUxZy+aQJAOsnT9NiPjHyt7i7KsJWGCnOFvAVemPYqV3lm93/j2OqOXypbbb2OrxYdogQkKQHzH4ahtvJmx66L4Jm4v/11SQ==}
+      expire-length: 1440 # tempo em minutos

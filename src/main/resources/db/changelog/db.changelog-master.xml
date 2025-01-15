@@ -1,0 +1,28 @@
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+      
+            
+    <changeSet id="create_tables_question" author="haetten">
+		<sqlFile path="sql/create_tables_questions.sql" relativeToChangelogFile="true"/>	
+    </changeSet>
+            
+    <changeSet id="create_tables_book" author="haetten">
+		<sqlFile path="sql/create_tables_book.sql" relativeToChangelogFile="true"/>	
+    </changeSet>
+            
+    <changeSet id="insert_questions" author="haetten">
+		<sqlFile path="sql/insert_questions.sql" relativeToChangelogFile="true"/>	
+    </changeSet>
+            
+    <changeSet id="update_sequences" author="haetten">
+		<sqlFile path="sql/update_sequences.sql" relativeToChangelogFile="true"/>	
+    </changeSet>
+      
+</databaseChangeLog>
