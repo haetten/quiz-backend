@@ -2,13 +2,13 @@ package br.com.fhsistemas.quizapp.filter;
 
 import br.com.fhsistemas.quizapp.entity.question.Question.QuestionDifficulty;
 import br.com.fhsistemas.quizapp.entity.question.Question.QuestionType;
-import br.com.fhsistemas.quizapp.generic.model.QueryFilter;
+import br.com.fhsistemas.quizapp.generic.model.GenericFilter;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper=true)
-public class QuestionFilter extends QueryFilter{
+public class QuestionFilter extends GenericFilter{
 	Long category; 
 	QuestionDifficulty difficulty; 
 	QuestionType type;

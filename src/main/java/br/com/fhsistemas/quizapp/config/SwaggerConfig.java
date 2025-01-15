@@ -10,9 +10,9 @@ import io.swagger.v3.oas.annotations.security.SecurityScheme;
 @Configuration
 @OpenAPIDefinition(
 info = @Info(
-		title = "APIs jobya.pro",
+		title = "APIs quiz",
 		version = "v3", 
-		description = "ENV=${spring.profiles.active:Unknown} , VERSION=${project.version}"
+		description = "ENV=${spring.profiles.active:no-profile} , VERSION=${project.version}"
 ))
 @SecurityScheme(name = "bearer-key", type = SecuritySchemeType.HTTP, scheme = "bearer", bearerFormat = "JWT")
 public class SwaggerConfig {
