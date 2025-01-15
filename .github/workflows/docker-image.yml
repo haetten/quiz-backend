@@ -8,6 +8,10 @@ on:
         branches:
             - feature/actions_docker_image
 
+permissions:
+    contents: read
+    packages: write
+
 jobs:
     build:
         runs-on: ubuntu-latest
