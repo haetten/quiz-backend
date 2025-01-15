@@ -4,6 +4,8 @@ on:
     push:
         branches:
             - feature/actions_docker_image
+        tags:
+            - '*'
     pull_request:
         branches:
             - feature/actions_docker_image
@@ -47,3 +49,4 @@ jobs:
                 context: .
                 push: true
                 tags: ghcr.io/${{ github.repository_owner }}/quiz-backend:${{ env.VERSION }}
+                platforms: linux/amd64,linux/arm64
