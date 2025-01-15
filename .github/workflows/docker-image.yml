@@ -2,13 +2,13 @@ name: Build and Push Docker Image
 
 on:
     push:
-        branches:
-            - feature/actions_docker_image
+#        branches:
+#            - feature/actions_docker_image
         tags:
             - '*'
-    pull_request:
-        branches:
-            - feature/actions_docker_image
+#    pull_request:
+#        branches:
+#            - feature/actions_docker_image
 
 permissions:
     contents: read
